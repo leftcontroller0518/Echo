@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "YV93tRhC+S0=",
+  "success": true,
+  "projectFilePath": "D:\\YMM4plugins\\YMM4Echo\\YMM4Echo\\YMM4Echo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kota_\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.87\\microsoft.windows.sdk.net.ref.10.0.19041.87.nupkg.sha512"
+  ],
+  "logs": []
+}

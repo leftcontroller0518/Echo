@@ -1,0 +1,881 @@
+### ---- interface / struct dumps
+==== YukkuriMovieMaker.Player.Video.IDrawable (in YukkuriMovieMaker.Plugin) abstract=True iface=True enum=False
+     base: 
+     iface: System.IDisposable
+     prop ID2D1Image Output
+
+==== YukkuriMovieMaker.Player.Video.EffectDescription (in YukkuriMovieMaker.Plugin) abstract=False iface=False enum=False
+     base: YukkuriMovieMaker.Player.Video.TimelineItemSourceDescription
+     iface: System.IEquatable`1[[YukkuriMovieMaker.Player.Video.TimelineSourceDescription, YukkuriMovieMaker.Plugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+     iface: System.IEquatable`1[[YukkuriMovieMaker.Player.Video.TimelineItemSourceDescription, YukkuriMovieMaker.Plugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+     iface: System.IEquatable`1[[YukkuriMovieMaker.Player.Video.EffectDescription, YukkuriMovieMaker.Plugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+     public T GetCustomValue(String name)
+     public Boolean TryGetCustomValue(T& value, String name)
+     public String ToString() [virtual]
+     protected Boolean PrintMembers(StringBuilder builder) [virtual]
+     public Int32 GetHashCode() [virtual]
+     public Boolean Equals(Object obj) [virtual]
+     public Boolean Equals(TimelineItemSourceDescription other) [virtual]
+     public Boolean Equals(EffectDescription other) [virtual]
+     public EffectDescription <Clone>$() [virtual]
+     ctor(TimelineItemSourceDescription timelineItemSourceDescription, DrawDescription drawDescription)
+     ctor(TimelineItemSourceDescription timelineItemSourceDescription, DrawDescription drawDescription, Int32 inputIndex)
+     ctor(TimelineItemSourceDescription timelineItemSourceDescription, DrawDescription drawDescription, Int32 inputIndex, Int32 inputCount)
+     ctor(TimelineItemSourceDescription timelineItemSourceDescription, DrawDescription drawDescription, Int32 inputIndex, Int32 inputCount, Int32 groupIndex, Int32 groupCount)
+     ctor(EffectDescription original)
+     prop Type EqualityContract
+     prop DrawDescription DrawDescription
+     prop Int32 InputIndex
+     prop Int32 InputCount
+     prop Int32 GroupIndex
+     prop Int32 GroupCount
+     field DrawDescription <DrawDescription>k__BackingField
+     field Int32 <InputIndex>k__BackingField
+     field Int32 <InputCount>k__BackingField
+     field Int32 <GroupIndex>k__BackingField
+     field Int32 <GroupCount>k__BackingField
+
+==== YukkuriMovieMaker.Player.Video.DrawDescription (in YukkuriMovieMaker.Plugin) abstract=False iface=False enum=False
+     base: System.Object
+     iface: System.IEquatable`1[[YukkuriMovieMaker.Player.Video.DrawDescription, YukkuriMovieMaker.Plugin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+     public DrawDescription SetCustomValue(T value, String name)
+     public T GetCustomValue(String name)
+     public Boolean TryGetCustomValue(T& value, String name)
+     public String ToString() [virtual]
+     protected Boolean PrintMembers(StringBuilder builder) [virtual]
+     public Int32 GetHashCode() [virtual]
+     public Boolean Equals(Object obj) [virtual]
+     public Boolean Equals(DrawDescription other) [virtual]
+     public DrawDescription <Clone>$() [virtual]
+     public Void Deconstruct(Vector3& Draw, Vector2& CenterPoint, Vector2& Zoom, Vector3& Rotation, Matrix4x4& Camera, InterpolationMode& ZoomInterpolationMode, Double& Opacity, Boolean& Invert, ImmutableList`1& Controllers)
+     ctor(Vector3 Draw, Vector2 CenterPoint, Vector2 Zoom, Vector3 Rotation, Matrix4x4 Camera, InterpolationMode ZoomInterpolationMode, Double Opacity, Boolean Invert, ImmutableList`1 Controllers)
+     ctor(DrawDescription defaultValues, Nullable`1 draw, Nullable`1 center, Nullable`1 zoom, Nullable`1 rotation, Nullable`1 camera, Nullable`1 zoomInterpolationMode, Nullable`1 opacity, Nullable`1 invert)
+     ctor(Vector2 draw, Vector2 center, Double zoomX, Double zoomY, InterpolationMode zoomInterpolationMode, Double opacity, Double rotationX, Double rotationY, Double rotationZ, Boolean invert)
+     ctor(DrawDescription defaultValues, Nullable`1 draw, Nullable`1 center, Nullable`1 zoomX, Nullable`1 zoomY, Nullable`1 zoomInterpolationMode, Nullable`1 opacity, Nullable`1 rotationX, Nullable`1 rotationY, Nullable`1 rotationZ, Nullable`1 invert)
+     ctor(DrawDescription original)
+     prop Type EqualityContract
+     prop Vector3 Draw
+     prop Vector2 CenterPoint
+     prop Vector2 Zoom
+     prop Vector3 Rotation
+     prop Matrix4x4 Camera
+     prop InterpolationMode ZoomInterpolationMode
+     prop Double Opacity
+     prop Boolean Invert
+     prop ImmutableList`1 Controllers
+     prop Vector2 DrawPoint
+     prop Nullable`1 PerspectiveDistance
+     prop BillboardMode Billboard
+     prop ImmutableDictionary`2 CustomValues
+     prop Double DrawPointX
+     prop Double DrawPointY
+     prop Double DrawPointZ
+     prop Double CenterPointX
+     prop Double CenterPointY
+     prop Double ZoomX
+     prop Double ZoomY
+     prop Double RotationX
+     prop Double RotationY
+     prop Double RotationZ
+     field Vector3 <Draw>k__BackingField
+     field Vector2 <CenterPoint>k__BackingField
+     field Vector2 <Zoom>k__BackingField
+     field Vector3 <Rotation>k__BackingField
+     field Matrix4x4 <Camera>k__BackingField
+     field InterpolationMode <ZoomInterpolationMode>k__BackingField
+     field Double <Opacity>k__BackingField
+     field Boolean <Invert>k__BackingField
+     field ImmutableList`1 <Controllers>k__BackingField
+     field Nullable`1 <PerspectiveDistance>k__BackingField
+     field BillboardMode <Billboard>k__BackingField
+     field ImmutableDictionary`2 <CustomValues>k__BackingField
+
+==== YukkuriMovieMaker.Commons.IGraphicsDevices (in YukkuriMovieMaker.Plugin) abstract=True iface=True enum=False
+     base: 
+     iface: System.IDisposable
+     public IGraphicsDevicesAndContext CreateContext() [abstract]
+     prop D3DDevices D3D
+     prop DXGIDevices DXGI
+     prop D2DDevices D2D
+     prop MFDevices MF
+     prop CacheProvider CacheProvider
+
+### ---- all IVideoEffectProcessor implementers
+  YukkuriMovieMaker.Player.Video.Effects.ArcBendEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.AutomaticZoomEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.BackgroundImageEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.BillboardEffect  (asm=YukkuriMovieMaker, base=Object)
+  YukkuriMovieMaker.Player.Video.Effects.BorderBlurEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.CameraFovEffect  (asm=YukkuriMovieMaker, base=Object)
+  YukkuriMovieMaker.Player.Video.Effects.CameraLookAtEffect  (asm=YukkuriMovieMaker, base=Object)
+  YukkuriMovieMaker.Player.Video.Effects.CameraPositionEffect  (asm=YukkuriMovieMaker, base=Object)
+  YukkuriMovieMaker.Player.Video.Effects.CameraWraparoundEffect  (asm=YukkuriMovieMaker, base=Object)
+  YukkuriMovieMaker.Player.Video.Effects.CenterPointEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.ChromaKeyEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.ChromaKeyEffectProcessor2  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.CircularDuplicatorEffect  (asm=YukkuriMovieMaker, base=Object)
+  YukkuriMovieMaker.Player.Video.Effects.CopyAndReverseEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.CrashEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.CropByAngleEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.CropEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.DirectionalBlurEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.DisplacementMapEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.DrawingEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.DrawLazyEffectEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.DrawPositionEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.EffectItemDrawingEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.ExposureEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.FillBackgroundEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.FillForegroundEffect  (asm=YukkuriMovieMaker, base=Object)
+  YukkuriMovieMaker.Player.Video.Effects.FrameLineEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.GammaCorrectionEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.GaussianBlurEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.GradientEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.GroupedDrawingEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.HalfToneBorderBlurEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.HalfToneEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.HalfToneOutlineEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.HalfToneShadowEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.HightlightsAndShadowsEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.HlslPixelShaderCodeEffect  (asm=YukkuriMovieMaker, base=Object)
+  YukkuriMovieMaker.Player.Video.Effects.HlslPixelShaderFileEffect  (asm=YukkuriMovieMaker, base=Object)
+  YukkuriMovieMaker.Player.Video.Effects.InnerHalfToneShadowEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.InnerShadowEffectProcessor  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.InOutBorderBlurEffect  (asm=YukkuriMovieMaker, base=InOutEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.InOutCrashEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.InOutFadeEffect  (asm=YukkuriMovieMaker, base=InOutEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.InOutGaussianBlurEffect  (asm=YukkuriMovieMaker, base=InOutEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.InOutGetUpEffect  (asm=YukkuriMovieMaker, base=InOutEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.InOutJumpEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.InOutMosaicEffect  (asm=YukkuriMovieMaker, base=InOutEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.InOutMoveEffect  (asm=YukkuriMovieMaker, base=InOutEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.InOutMoveFromOutsideFrameEffect  (asm=YukkuriMovieMaker, base=InOutEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.InOutMoveFromOutsideImageEffect  (asm=YukkuriMovieMaker, base=InOutEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.InOutRandomLineEffect  (asm=YukkuriMovieMaker, base=InOutEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.InOutRotateEffect  (asm=YukkuriMovieMaker, base=InOutEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.InOutSkewEffect  (asm=YukkuriMovieMaker, base=InOutEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.InOutTransitionEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.InOutZoomEffect  (asm=YukkuriMovieMaker, base=InOutEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.InvertEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.JumpEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.LinearTransferEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.MarginEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.MaskEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.MeshDeformationEffectProcessor  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.MonocolorizationEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.MorphologyEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.MosaicEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.MotionTrackingEffectProcessor  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.NoiseColorShiftEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.NoiseDisplacementMapEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.NoiseEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.OpacityEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.OutlineEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.PolarDrawPositionEffect  (asm=YukkuriMovieMaker, base=Object)
+  YukkuriMovieMaker.Player.Video.Effects.PolarTransformEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.PosterizeEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.RadialBlurEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.RadialLightEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.RandomDuplicatorEffect  (asm=YukkuriMovieMaker, base=Object)
+  YukkuriMovieMaker.Player.Video.Effects.RandomEffectBase`1  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.RandomLineEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.RandomMoveEffect  (asm=YukkuriMovieMaker, base=RandomEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.RandomOpacityEffect  (asm=YukkuriMovieMaker, base=RandomEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.RandomRotateEffect  (asm=YukkuriMovieMaker, base=RandomEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.RandomSkewEffect  (asm=YukkuriMovieMaker, base=RandomEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.RandomZoomEffect  (asm=YukkuriMovieMaker, base=RandomEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.RepeatEffectBase`1  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.RepeatMoveEffect  (asm=YukkuriMovieMaker, base=RepeatEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.RepeatOpacityEffect  (asm=YukkuriMovieMaker, base=RepeatEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.RepeatRotateEffect  (asm=YukkuriMovieMaker, base=RepeatEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.RepeatSkewEffect  (asm=YukkuriMovieMaker, base=RepeatEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.RepeatZoomEffect  (asm=YukkuriMovieMaker, base=RepeatEffectBase`1)
+  YukkuriMovieMaker.Player.Video.Effects.RotateEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.RoundCornerEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.SepiaEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.ShadowEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.SharpenEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.ShowOnlyPreviewEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.SkewEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.TextureEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.TilingEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.TintEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.XYToPolarTransformEffect  (asm=YukkuriMovieMaker, base=Object)
+  YukkuriMovieMaker.Player.Video.Effects.ZoomEffect  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.CustomEffects.ChromaticAberration  (asm=YukkuriMovieMaker, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Items.TransitionSource+PassThroughDrawing  (asm=YukkuriMovieMaker, base=Object)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ZoomPixel.ZoomPixelEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=Object)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Wave.WaveEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.WaveClipping.WaveClippingEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.VignetteBlur.VignetteBlurProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.VectorFieldWarp.VectorFieldWarpEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.UnidirectionalBlur.UnidirectionalBlurProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Tritone.TritoneEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.TrimMargin.TrimMarginEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.TilingGroupItems.TilingGroupItemsEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ThreeDimensional.ThreeDimensionalEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.StripeGlitchNoise.StripeGlitchNoiseEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Stretch.StretchEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.SpreadPageTurn.InOutSpreadPageTurnEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=InOutEffectBase`1)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.SpreadPageTurn.SpreadPageTurnEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.SpiralTransform.SpiralTransformEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ShuffleText.ShuffleTextEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=Object)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ShuffleTextInOut.ShuffleTextInOutEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=Object)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Ripple.RippleEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ReflectionAndExtrusion.ReflectionAndExtrusionEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ReflectionAndExtrusion.Lighting.PointSpecular.PointSpecularLightingProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=Object)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ReflectionAndExtrusion.Lighting.PointDiffuse.PointDiffuseLightingProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=Object)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ReflectionAndExtrusion.Lighting.DistantSpecular.DistantSpecularLightingProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=Object)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ReflectionAndExtrusion.Lighting.DistantDiffuse.DistantDiffuseLightingProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=Object)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ReflectionAndExtrusion.Heightmap.HeightmapFile.HeightmapFileSource  (asm=YukkuriMovieMaker.Plugin.Community, base=Object)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ReflectionAndExtrusion.Heightmap.Bevel.BevelHeightmapSource  (asm=YukkuriMovieMaker.Plugin.Community, base=Object)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ReelSpin.InOutReelSpinEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=InOutEffectBase`1)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ReelSpin.ReelSpinEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.RectangleGlitchNoise.RectangleGlitchNoiseEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.RatioCrop.RatioCropEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=Object)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Radiance.RadianceEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.RadialArrangeGroupItems.RadialArrangeGroupItemsEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.PuppetDeformation.PuppetDeformationEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.PixelSort.PixelSortEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.PerspectiveShadow.PerspectiveShadowEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Particlize.InOutParticlizeEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=InOutEffectBase`1)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Particlize.ParticlizeEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ParticleOutput.ParticleOutputEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.PartialOutline.PartialOutlineEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.PageTurn.InOutPageTurnEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=InOutEffectBase`1)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.PageTurn.PageTurnEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.OutputSwitch.OutputSwitchEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.OutputMapComposite.OutputMapCompositeEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.OutputComposite.OutputCompositeEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.OutputChannelRouter.OutputChannelRouterEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.OutputBranch.OutputBranchEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.OpenFx.OpenFxInOutTransitionEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.OpenFx.OpenFxVideoEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.NtscComposite.NtscCompositeEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.MotionBlur.MotionBlurEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Lut.LutEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.LuminanceMask.LuminanceMaskEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.LuminanceKey.LuminanceKeyEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.LongShadow.LongShadowEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.LineHighlight.LineHighlightEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.LensBlur.LensBlurProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Kaleidoscope.KaleidoscopeEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.InOutCrop.InOutCropEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.InnerOutline.InnerOutlineEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.HeatHaze.HeatHazeEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.GradientMap.Effect.GradientMapEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.GodRay.GodRayEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Fog.FogEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Flip.FlipEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.FishEyeLens.FishEyeLensProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.FillSametype.FillSametypeProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.FillSameground.FillSamegroundProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.FacetedGlass.FacetedGlassEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.EdgeTrimming.EdgeTrimmingEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.EdgeGlow.EdgeGlowEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.EdgeDetection.EdgeDetectionEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Dithering.DitheringEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.DirectionalColorKey.DirectionalColorKeyEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.CrossHatchShading.CrossHatchShadingEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.CrossFilter.CrossFilterEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Container.ContainerEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=Object)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ColorShift.ColorShiftEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ColorCorrection.ColorCorrectionEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ColorBlindness.ColorBlindnessEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.CircularBlur.CircularBlurEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Caustics.CausticsEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.CameraShake.CameraShakeEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.BlurMap.BlurMapProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Bloom.BloomEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Binarization.BinarizationEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AudioVolume.Zoom.AudioVolumeZoomEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=AudioVolumeVideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AudioVolume.Skew.AudioVolumeSkewEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=AudioVolumeVideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AudioVolume.Rotate.AudioVolumeRotateEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=AudioVolumeVideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AudioVolume.Opacity.AudioVolumeOpacityEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=AudioVolumeVideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AudioVolume.Move.AudioVolumeMoveEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=AudioVolumeVideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AudioVolume.Commons.EffectBase.AudioVolumeVideoEffectProcessorBase  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ArrangeGroupItems.ArrangeGroupItemsEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AnisotropicKuwahara.AnisotropicKuwaharaEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AmbientOcclusion.AmbientOcclusionEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AlphaMask.AlphaMaskEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AfterImage.AfterImageEffectProcessor  (asm=YukkuriMovieMaker.Plugin.Community, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.InOutEffectBase`1  (asm=YukkuriMovieMaker.Plugin, base=VideoEffectProcessorBase)
+  YukkuriMovieMaker.Player.Video.Effects.VideoEffectProcessorBase  (asm=YukkuriMovieMaker.Plugin, base=Object)
+  ConjunctionShrink.ConjunctionShrinkProcessor  (asm=ConjunctionShrink, base=Object)
+  Komaochi.KomaochiEffectProcessor  (asm=Komaochi, base=Object)
+  Parenting.Effects.ChildEffectProcessor  (asm=Parenting, base=PassThroughProcessor)
+  Parenting.Effects.ParentEffectProcessor  (asm=Parenting, base=PassThroughProcessor)
+  Parenting.Effects.PassThroughProcessor  (asm=Parenting, base=Object)
+  YMM4Echo.EchoEffectProcessor  (asm=YMM4Echo, base=Object)
+
+### ---- VideoEffect attribute raw args
+  YukkuriMovieMaker.Project.Effects.ArcBendEffect (YukkuriMovieMaker)
+      ctor      : ArcBendEffectName | [YMM4Key_EffectCategoryDrawingName] | [湾曲,曲げ,bend,arc] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.AutomaticZoomEffect (YukkuriMovieMaker)
+      ctor      : AutomaticZoomEffectName | [YMM4Key_EffectCategoryDrawingName] | [Zoom] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.BackgroundImageEffect (YukkuriMovieMaker)
+      ctor      : BackgroundImageEffectName | [YMM4Key_EffectCategoryDecorationName] | [背景,background,テクスチャ,texture,動画ファイル合成,画像ファイル合成] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.BillboardEffect (YukkuriMovieMaker)
+      ctor      : BillboardEffectName | [YMM4Key_EffectCategoryCameraName] | [ビルボード,billboard,カメラ,camera] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.BorderBlurEffect (YukkuriMovieMaker)
+      ctor      : BorderBlurEffectName | [YMM4Key_EffectCategoryFilteringName] | [border blur] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.CameraFovEffect (YukkuriMovieMaker)
+      ctor      : CameraFovEffectName | [YMM4Key_EffectCategoryCameraName] | [カメラ,camera,視野角,FOV] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.CameraLookAtEffect (YukkuriMovieMaker)
+      ctor      : CameraLookAtEffectName | [YMM4Key_EffectCategoryCameraName] | [カメラ,camera] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.CameraPositionEffect (YukkuriMovieMaker)
+      ctor      : CameraPositionEffectName | [YMM4Key_EffectCategoryCameraName] | [カメラ,camera] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.CameraWraparoundEffect (YukkuriMovieMaker)
+      ctor      : CameraWraparoundEffectName | [YMM4Key_EffectCategoryCameraName] | [カメラ,camera] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.CenterPointEffect (YukkuriMovieMaker)
+      ctor      : CenterPointEffectName | [YMM4Key_EffectCategoryDrawingName] | [描画基準,center point,base point] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.ChromaKeyEffect (YukkuriMovieMaker)
+      ctor      : ChromaKeyEffectName | [YMM4Key_EffectCategoryCompositionName] | [chromakey] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.ChromaKeyEffect2 (YukkuriMovieMaker)
+      ctor      : ChromaKeyEffectName | [YMM4Key_EffectCategoryCompositionName] | [chroma key] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.ChromaticAberrationEffect (YukkuriMovieMaker)
+      ctor      : ChromaticAberrationEffectName | [YMM4Key_EffectCategoryFilteringName] | [Chromatic Aberration,chroma aberration] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.CircularDuplicatorEffect (YukkuriMovieMaker)
+      ctor      : CircularDuplicatorEffectName | [YMM4Key_EffectCategoryLayoutName] | [円周配置] | True | True
+      named     : IsEffectItemSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.CopyAndReverseEffect (YukkuriMovieMaker)
+      ctor      : CopyAndReverseEffectName | [YMM4Key_EffectCategoryLayoutName] | [] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.CrashEffect (YukkuriMovieMaker)
+      ctor      : CrashEffectName | [YMM4Key_EffectCategoryAnimationName] | [砕け散る,クラッシュ,crash,割れ,ガラス] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.CropByAngleEffect (YukkuriMovieMaker)
+      ctor      : CropByAngleEffectName | [YMM4Key_EffectCategoryCompositionName] | [clipping,crop] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.CropEffect (YukkuriMovieMaker)
+      ctor      : CropEffectName | [YMM4Key_EffectCategoryCompositionName] | [clipping,crop,クロップ] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.DirectionalBlurEffect (YukkuriMovieMaker)
+      ctor      : DirectionalBlurEffectName | [YMM4Key_EffectCategoryFilteringName] | [Directional Blur,方向ぼかし,移動ぼかし,ディレクショナルブラー] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.DisplacementMapEffect (YukkuriMovieMaker)
+      ctor      : DisplacementMapEffectName | [YMM4Key_EffectCategoryFilteringName] | [displacement mapping,ディスプレイスメントマッピング,ディスプレイスメントマップ] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.DrawLazyEffectEffect (YukkuriMovieMaker)
+      ctor      : DrawLazyEffectEffectName | [YMM4Key_EffectCategoryDrawingName] | [遅延,lazy] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.DrawPositionEffect (YukkuriMovieMaker)
+      ctor      : DrawPositionEffectName | [YMM4Key_EffectCategoryDrawingName] | [X,Y,Z] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.ExposureEffect (YukkuriMovieMaker)
+      ctor      : ExposureEffectName | [YMM4Key_EffectCategoryFilteringName] | [exposure] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.FillBackgroundEffect (YukkuriMovieMaker)
+      ctor      : FillBackgroundEffectName | [YMM4Key_EffectCategoryDecorationName] | [background,fill] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.FillForegroundEffect (YukkuriMovieMaker)
+      ctor      : FillForegroundEffectName | [YMM4Key_EffectCategoryDecorationName] | [fill foreground] | True | True
+      named     : IsAviUtlSupported=True | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.FrameLineEffect (YukkuriMovieMaker)
+      ctor      : FrameLineEffectName | [YMM4Key_EffectCategoryDecorationName] | [frame line,frame border] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.GammaCorrectionEffect (YukkuriMovieMaker)
+      ctor      : GammaCorrectionEffectName | [YMM4Key_EffectCategoryFilteringName] | [gamma correction] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.GaussianBlurEffect (YukkuriMovieMaker)
+      ctor      : GaussianBlurEffectName | [YMM4Key_EffectCategoryFilteringName] | [Gaussian Blur,ガウスぼかし,ガウシアンブラー] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.GradientEffect (YukkuriMovieMaker)
+      ctor      : GradientEffectName | [YMM4Key_EffectCategoryFilteringName] | [Gradation] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.HalfToneBorderBlurEffect (YukkuriMovieMaker)
+      ctor      : HalfToneBorderBlurEffectName | [YMM4Key_EffectCategoryDecorationName] | [ハーフトーン境界ぼかし,halftone border blur] | False | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.HalfToneEffect (YukkuriMovieMaker)
+      ctor      : HalfToneEffectName | [YMM4Key_EffectCategoryFilteringName] | [ハーフトーン,half tone] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.HalfToneOutlineEffect (YukkuriMovieMaker)
+      ctor      : HalfToneOutlineEffectName | [YMM4Key_EffectCategoryDecorationName] | [ハーフトーン縁取り,half tone outline] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.HalfToneShadowEffect (YukkuriMovieMaker)
+      ctor      : HalfToneShadowEffectName | [YMM4Key_EffectCategoryDecorationName] | [ハーフトーン陰,halftone shadow] | False | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.HightlightsAndShadowsEffect (YukkuriMovieMaker)
+      ctor      : HightlightsAndShadowsEffectName | [YMM4Key_EffectCategoryFilteringName] | [ハイライトとシャドー,highlights and shadows,highlight and shadow] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.HlslPixelShaderCodeEffect (YukkuriMovieMaker)
+      ctor      : HlslPixelShaderCodeEffect | [YMM4Key_EffectCategoryFilteringName] | [pixel shader] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.HlslPixelShaderFileEffect (YukkuriMovieMaker)
+      ctor      : HlslPixelShaderFileEffect | [YMM4Key_EffectCategoryFilteringName] | [pixel shader] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InnerHalfToneShadowEffect (YukkuriMovieMaker)
+      ctor      : InnerHalfToneShadowEffectName | [YMM4Key_EffectCategoryDecorationName] | [ハーフトーン陰（内側）,inner halftone shadow] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InnerShadowEffect (YukkuriMovieMaker)
+      ctor      : InnerShadowEffectName | [YMM4Key_EffectCategoryDecorationName] | [陰,inner shadow] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InOutBorderBlurEffect (YukkuriMovieMaker)
+      ctor      : InOutBorderBlurEffectName | [YMM4Key_EffectCategoryTransitionName] | [border blur] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InOutCrashEffect (YukkuriMovieMaker)
+      ctor      : InOutCrashEffectName | [YMM4Key_EffectCategoryTransitionName] | [砕け散る] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InOutFadeEffect (YukkuriMovieMaker)
+      ctor      : InOutFadeEffectName | [YMM4Key_EffectCategoryTransitionName] | [フェードアウト,fade in,fade out] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InOutGaussianBlurEffect (YukkuriMovieMaker)
+      ctor      : InOutGaussianBlurEffectName | [YMM4Key_EffectCategoryTransitionName] | [Gaussian Blur,ガウスぼかし,ガウシアンブラー] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InOutGetUpEffect (YukkuriMovieMaker)
+      ctor      : InOutGetUpEffectName | [YMM4Key_EffectCategoryTransitionName] | [] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InOutJumpEffect (YukkuriMovieMaker)
+      ctor      : InOutJumpEffectName | [YMM4Key_EffectCategoryTransitionName] | [jump,ジャンプ] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InOutMosaicEffect (YukkuriMovieMaker)
+      ctor      : InOutMosaicEffectName | [YMM4Key_EffectCategoryTransitionName] | [モザイク,mosaic] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InOutMoveEffect (YukkuriMovieMaker)
+      ctor      : InOutMoveEffectName | [YMM4Key_EffectCategoryTransitionName] | [move,X,Y,描画位置,座標] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InOutMoveFromOutsideFrameEffect (YukkuriMovieMaker)
+      ctor      : InOutMoveFromOutsideFrameEffectName | [YMM4Key_EffectCategoryTransitionName] | [move] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InOutMoveFromOutsideImageEffect (YukkuriMovieMaker)
+      ctor      : InOutMoveFromOutsideImageEffectName | [YMM4Key_EffectCategoryTransitionName] | [move] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InOutRandomLineEffect (YukkuriMovieMaker)
+      ctor      : InOutRandomLineEffectName | [YMM4Key_EffectCategoryTransitionName] | [ランダムライン,ライン,走査線,random line,randomline,scanline] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InOutRotateEffect (YukkuriMovieMaker)
+      ctor      : InOutRotateEffectName | [YMM4Key_EffectCategoryTransitionName] | [rotation,rotate,angle] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InOutSkewEffect (YukkuriMovieMaker)
+      ctor      : InOutSkewEffectName | [YMM4Key_EffectCategoryTransitionName] | [skew] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InOutTransitionEffect (YukkuriMovieMaker)
+      ctor      : InOutTransitionEffectName | [YMM4Key_EffectCategoryTransitionName] | [シーンチェンジ,トランジション,ワイプ,scene change,transition,wipe] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InOutZoomEffect (YukkuriMovieMaker)
+      ctor      : InOutZoomEffectName | [YMM4Key_EffectCategoryTransitionName] | [zoom] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.InvertEffect (YukkuriMovieMaker)
+      ctor      : InvertEffectName | [YMM4Key_EffectCategoryFilteringName] | [color inversion,invert] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.JumpEffect (YukkuriMovieMaker)
+      ctor      : JumpEffectName | [YMM4Key_EffectCategoryAnimationName] | [jump,ジャンプ] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.LinearTransferEffect (YukkuriMovieMaker)
+      ctor      : LinearTransferEffectName | [YMM4Key_EffectCategoryFilteringName] | [線形色変換,linear transfer] | False | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.MarginEffect (YukkuriMovieMaker)
+      ctor      : MarginEffectName | [YMM4Key_EffectCategoryDrawingName] | [margin,padding,領域拡張] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.MaskEffect (YukkuriMovieMaker)
+      ctor      : MaskEffectName | [YMM4Key_EffectCategoryCompositionName] | [mask,マスク,crop,clipping,クロップ,クリッピング] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.MeshDeformationEffect (YukkuriMovieMaker)
+      ctor      : MeshDeformationEffectName | [YMM4Key_EffectCategoryDrawingName] | [mesh deformation,mesh transform,自由変形,free deformation,free transform] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.MonocolorizationEffect (YukkuriMovieMaker)
+      ctor      : MonocolorizationEffectName | [YMM4Key_EffectCategoryFilteringName] | [単色化,monocolorization] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.MorphologyEffect (YukkuriMovieMaker)
+      ctor      : MorphologyEffectName | [YMM4Key_EffectCategoryFilteringName] | [morphology] | True | False
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.MosaicEffect (YukkuriMovieMaker)
+      ctor      : MosaicEffectName | [YMM4Key_EffectCategoryFilteringName] | [mosaic] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.MotionTrackingEffect (YukkuriMovieMaker)
+      ctor      : MotionTrackingEffectName | [YMM4Key_EffectCategoryCompositionName] | [モーショントラッキング,オブジェクトトラッキング,モーショントラッカー,オブジェクトトラッカー,motion tracking,object tracking,motion tracker,object tracker,追従,トラッキング,トラッカー,tracking,tracker] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.NoiseColorShiftEffect (YukkuriMovieMaker)
+      ctor      : NoiseColorShiftEffectName | [YMM4Key_EffectCategoryFilteringName] | [ノイズカラーシフト,noise color shift,ノイズディスプレイスメントマッッピング,ノイズディスプレイスメントマップ,noise displacement mapping] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.NoiseDisplacementMapEffect (YukkuriMovieMaker)
+      ctor      : NoiseDisplacementMapEffectName | [YMM4Key_EffectCategoryFilteringName] | [ノイズディスプレイスメントマッピング,noise displacement mapping] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.NoiseEffect (YukkuriMovieMaker)
+      ctor      : NoiseEffectName | [YMM4Key_EffectCategoryFilteringName] | [noise,砂嵐] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.OpacityEffect (YukkuriMovieMaker)
+      ctor      : OpacityEffectName | [YMM4Key_EffectCategoryDrawingName] | [Opacity,Alpha] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.OutlineEffect (YukkuriMovieMaker)
+      ctor      : OutlineEffectName | [YMM4Key_EffectCategoryDecorationName] | [アウトライン,outline,縁取り,ふちどり,ボーダー,border,アウターアウトライン,アウターボーダー,outer outline,outer border] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.PolarDrawPositionEffect (YukkuriMovieMaker)
+      ctor      : PolarDrawPositionEffectName | [YMM4Key_EffectCategoryDrawingName] | [X,Y] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.PolarTransformEffect (YukkuriMovieMaker)
+      ctor      : PolarTransformEffectName | [YMM4Key_EffectCategoryDrawingName] | [polar] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.PosterizeEffect (YukkuriMovieMaker)
+      ctor      : PosterizeEffectName | [YMM4Key_EffectCategoryCompositionName] | [posterize] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.RadialBlurEffect (YukkuriMovieMaker)
+      ctor      : RadialBlurEffectName | [YMM4Key_EffectCategoryFilteringName] | [radial blur] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.RadialLightEffect (YukkuriMovieMaker)
+      ctor      : RadialLightEffectName | [YMM4Key_EffectCategoryFilteringName] | [radial light,閃光,flash] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.RandomDuplicatorEffect (YukkuriMovieMaker)
+      ctor      : RandomDuplicatorEffectName | [YMM4Key_EffectCategoryLayoutName] | [ランダム配置,random arrangement,random layout,random duplicator] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.RandomLineEffect (YukkuriMovieMaker)
+      ctor      : RandomLineEffectName | [YMM4Key_EffectCategoryCompositionName] | [ランダムライン,ライン,走査線,random line,randomline,scanline] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.RandomMoveEffect (YukkuriMovieMaker)
+      ctor      : RandomMoveEffectName | [YMM4Key_EffectCategoryAnimationName] | [random move,震え,X,Y,描画位置,座標] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.RandomOpacityEffect (YukkuriMovieMaker)
+      ctor      : RandomOpacityEffectName | [YMM4Key_EffectCategoryAnimationName] | [random opacity] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.RandomRotateEffect (YukkuriMovieMaker)
+      ctor      : RandomRotateEffectName | [YMM4Key_EffectCategoryAnimationName] | [random rotate,震え,rotation,angle,角度] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.RandomSkewEffect (YukkuriMovieMaker)
+      ctor      : RandomSkewEffectName | [YMM4Key_EffectCategoryAnimationName] | [skew] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.RandomZoomEffect (YukkuriMovieMaker)
+      ctor      : RandomZoomEffectName | [YMM4Key_EffectCategoryAnimationName] | [random zoom] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.RepeatMoveEffect (YukkuriMovieMaker)
+      ctor      : RepeatMoveEffectName | [YMM4Key_EffectCategoryAnimationName] | [ジャンプ,跳ねる,浮遊,jump,bound,bounce,float,X,Y,描画位置,座標] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.RepeatOpacityEffect (YukkuriMovieMaker)
+      ctor      : RepeatOpacityEffectName | [YMM4Key_EffectCategoryAnimationName] | [不透明度,点滅,opacity,blink,alpha] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.RepeatRotateEffect (YukkuriMovieMaker)
+      ctor      : RepeatRotateEffectName | [YMM4Key_EffectCategoryAnimationName] | [揺れ,3D回転,角度,rotate,rotation,angle] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.RepeatSkewEffect (YukkuriMovieMaker)
+      ctor      : RepeatSkewEffectName | [YMM4Key_EffectCategoryAnimationName] | [skew] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.RepeatZoomEffect (YukkuriMovieMaker)
+      ctor      : RepeatZoomEffectName | [YMM4Key_EffectCategoryAnimationName] | [浮遊,zoom,float] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.RotateEffect (YukkuriMovieMaker)
+      ctor      : RotateEffectName | [YMM4Key_EffectCategoryDrawingName] | [角度,rotation,rotate,angle] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.RoundCornerEffect (YukkuriMovieMaker)
+      ctor      : RoundCornerEffectName | [YMM4Key_EffectCategoryFilteringName] | [Rounded corners] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.SepiaEffect (YukkuriMovieMaker)
+      ctor      : SepiaEffectName | [YMM4Key_EffectCategoryFilteringName] | [sepia] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.ShadowEffect (YukkuriMovieMaker)
+      ctor      : ShadowEffectName | [YMM4Key_EffectCategoryDecorationName] | [陰,shadow] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.SharpenEffect (YukkuriMovieMaker)
+      ctor      : SharpenEffectName | [YMM4Key_EffectCategoryFilteringName] | [sharpen] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.ShowOnlyPreviewEffect (YukkuriMovieMaker)
+      ctor      : ShowOnlyPreviewEffectName | [YMM4Key_EffectCategoryDrawingName] | [] | True | False
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.SkewEffect (YukkuriMovieMaker)
+      ctor      : SkewEffectName | [YMM4Key_EffectCategoryDrawingName] | [skew] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.TextureEffect (YukkuriMovieMaker)
+      ctor      : TextureEffectName | [YMM4Key_EffectCategoryDecorationName] | [前景,foreground,テクスチャ,texture,動画ファイル合成,画像ファイル合成] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.TilingEffect (YukkuriMovieMaker)
+      ctor      : TilingEffectName | [YMM4Key_EffectCategoryLayoutName] | [tile,repeat,タイル,繰り返し,画像ループ] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.TintEffect (YukkuriMovieMaker)
+      ctor      : TintEffectName | [YMM4Key_EffectCategoryFilteringName] | [tint] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.XYToPolarTransformEffect (YukkuriMovieMaker)
+      ctor      : XYToPolarTransformEffectName | [YMM4Key_EffectCategoryDrawingName] | [極座標変換,polar coordinates] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Project.Effects.ZoomEffect (YukkuriMovieMaker)
+      ctor      : ZoomEffectName | [YMM4Key_EffectCategoryDrawingName] | [zoom,aspect,アスペクト比,縦横比] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Resources.Localization.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ZoomPixel.ZoomPixelEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : ZoomPixel | [YMM4Key_EffectCategoryDrawingName] | [pixel zoom,resize] | True | True
+      named     : IsEffectItemSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.ZoomPixel.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Wave.WaveEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : WaveEffectName | [YMM4Key_EffectCategoryAnimationName] | [raster scroll,ラスター,縦波,横波,vertical wave,horizontal wave,波打つ] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.Wave.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.WaveClipping.WaveClippingEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : WaveClipping | [YMM4Key_EffectCategoryCompositionName] | [TagWave,TagClipping,TagWaveKatakana] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.WaveClipping.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.VignetteBlur.VignetteBlurEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : VignetteBlur | [YMM4Key_EffectCategoryFilteringName] | [周辺ぼかし,周辺減光,周辺増光,周辺色ずれ,色収差,ガウスぼかし,ガウスブラー,ガウシアンブラー,回転ぼかし,回転ブラー,放射ぼかし,放射ブラー,チルトシフト,ビネット,ブラー,Tilt Shift,Vignette,Blur,Color Shift,Chromatic Aberration,Gaussian Blur,Radial Blur,Circular Blur] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.VignetteBlur.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.VectorFieldWarp.VectorFieldWarpEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : VectorFieldWarpEffectName | [YMM4Key_EffectCategoryFilteringName] | [TagVectorField,TagVortex,TagAttraction,TagWarp] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.VectorFieldWarp.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.UnidirectionalBlur.UnidirectionalBlurEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : UnidirectionalBlur | [YMM4Key_EffectCategoryFilteringName] | [unidirectional blur,ブラー,ぼかし] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.UnidirectionalBlur.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Tritone.TritoneEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : TritoneEffectName | [YMM4Key_EffectCategoryFilteringName] | [tritone,tri-tone,トライトーン,三色调,三色調,트라이톤] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.Tritone.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.TrimMargin.TrimMarginEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : TrimMarginEffectName | [YMM4Key_EffectCategoryFilteringName] | [TagTrimMargin,TagCrop,TagTransparent] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.TrimMargin.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.TilingGroupItems.TilingGroupItemsEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : TilingGroupItemsEffectName | [YMM4Key_EffectCategoryLayoutName] | [整列,Tiling items in group control] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.TilingGroupItems.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ThreeDimensional.ThreeDimensionalEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : ThreeDimensionalEffectName | [YMM4Key_EffectCategoryDecorationName] | [立体化,three dimensional] | False | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.ThreeDimensional.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.StripeGlitchNoise.StripeGlitchNoiseEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : StripeGlitchNoiseEffectName | [YMM4Key_EffectCategoryAnimationName] | [glitch noise] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.StripeGlitchNoise.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Stretch.StretchEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : StretchEffect | [YMM4Key_EffectCategoryFilteringName] | [stretch] | True | False
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.Stretch.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.SpreadPageTurn.InOutSpreadPageTurnEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : InOutSpreadPageTurnEffectName | [YMM4Key_EffectCategoryTransitionName] | [見開きめくり,本めくり,ページめくり,折りたたみ,book,spread,page,turn,curl,fold] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Transition.SpreadPageTurn.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.SpreadPageTurn.SpreadPageTurnEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : SpreadPageTurnEffectName | [YMM4Key_EffectCategoryDrawingName] | [見開きめくり,本めくり,ページめくり,折りたたみ,book,spread,page,turn,curl,fold] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Transition.SpreadPageTurn.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.SpiralTransform.SpiralTransformEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : SpiralTransformEffectName | [YMM4Key_EffectCategoryFilteringName] | [渦巻き,螺旋,spiral] | True | False
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.SpiralTransform.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ShuffleText.ShuffleTextEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : ShuffleTextEffectDefaultName | [YMM4Key_EffectCategoryAnimationName] | [Shuffle Text,シャッフル,Shuffle Letters] | True | False
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.ShuffleText.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ShuffleTextInOut.ShuffleTextInOutEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : ShuffleTextEffectDefaultName | [YMM4Key_EffectCategoryTransitionName] | [Shuffle Text InOut,シャッフル,Shuffle Letters InOut] | True | False
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.ShuffleTextInOut.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Ripple.RippleEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : RippleEffectName | [YMM4Key_EffectCategoryAnimationName] | [リップル,ripple] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.Ripple.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ReflectionAndExtrusion.ReflectionAndExtrusionEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : ReflectionAndExtrusion | [YMM4Key_EffectCategoryDecorationName] | [鏡面,拡散,スペキュラ,ディフューズ,specular,diffuse,反射,リフレクト,リフレクション,reflection,光源,ライト,ライティング,lighting,平行光源,ディスタントライト,distant light,点光源,ポイントライト,point light,高さ場,ハイトマップ,heightmap,面取り,ベベル,bevel,バンプマップ,バンプマッピング,bump mapping] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.ReflectionAndExtrusion.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ReelSpin.InOutReelSpinEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : InOutReelSpinEffectName | [YMM4Key_EffectCategoryTransitionName] | [reel,slot,リール回転,スロット] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.ReelSpin.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ReelSpin.ReelSpinEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : ReelSpinEffectName | [YMM4Key_EffectCategoryAnimationName] | [reel,slot,リール回転,スロット,周回,loop scroll] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.ReelSpin.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.RectangleGlitchNoise.RectangleGlitchNoiseEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : RectangleGlitchNoise | [YMM4Key_EffectCategoryAnimationName] | [glitch noise] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.RectangleGlitchNoise.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.RatioCrop.RatioCropEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : RatioCrop | [YMM4Key_EffectCategoryCompositionName] | [clipping,crop,クロップ,ratio,rate,%,割合] | True | False
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.RatioCrop.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Radiance.RadianceEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : RadianceEffectName | [YMM4Key_EffectCategoryDecorationName] | [TagGlobalIllumination,TagLighting,TagGlow] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.Radiance.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.RadialArrangeGroupItems.RadialArrangeGroupItemsEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : RadialArrangeGroupItemsEffectName | [YMM4Key_EffectCategoryLayoutName] | [整列,Radial arrange items in group control at equal intervals] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.RadialArrangeGroupItems.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.PuppetDeformation.PuppetDeformationEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : PuppetDeformationEffectName | [YMM4Key_EffectCategoryFilteringName] | [TagPuppet,TagPin,TagWarp,TagDeform] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.PuppetDeformation.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.PixelSort.PixelSortEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : PixelSortEffectName | [YMM4Key_EffectCategoryFilteringName] | [ピクセルソート,pixel sort,pixelsort,グリッチ,glitch,ソート,sort,datamosh] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.PixelSort.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.PerspectiveShadow.PerspectiveShadowEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : PerspectiveShadowEffectName | [YMM4Key_EffectCategoryDecorationName] | [TagPerspectiveShadow,TagPerspective,TagShadow3D,TagCastShadow,TagShadow] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.PerspectiveShadow.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Particlize.InOutParticlizeEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : InOutParticlize | [YMM4Key_EffectCategoryTransitionName] | [TagParticle,TagParticlize,TagDissolve,TagDisappear] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.Particlize.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Particlize.ParticlizeEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : Particlize | [YMM4Key_EffectCategoryAnimationName] | [TagParticle,TagParticlize,TagDissolve,TagDisappear] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.Particlize.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ParticleOutput.ParticleOutputEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : ParticleOutput | [YMM4Key_EffectCategoryDecorationName] | [TagParticle,TagSparkle,TagSnow,TagEmitter] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.ParticleOutput.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.PartialOutline.PartialOutlineEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : PartialOutlineEffectName | [YMM4Key_EffectCategoryDecorationName] | [TagPartialOutline,TagPartialBorder] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.PartialOutline.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.PageTurn.InOutPageTurnEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : InOutPageTurnEffectName | [YMM4Key_EffectCategoryTransitionName] | [ページめくり,page,turn,curl] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Transition.PageTurn.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.PageTurn.PageTurnEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : PageTurnEffectName | [YMM4Key_EffectCategoryDrawingName] | [ページめくり,page,turn,curl] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Transition.PageTurn.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.OutputSwitch.OutputSwitchEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : OutputSwitchEffectName | [YMM4Key_EffectCategoryBranchName] | [分岐,branch,切替,switch] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.OutputSwitch.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.OutputMapComposite.OutputMapCompositeEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : OutputMapCompositeEffectName | [YMM4Key_EffectCategoryBranchName] | [分岐,branch,合成,composite,blend,map,マップ,lerp] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.OutputMapComposite.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.OutputComposite.OutputCompositeEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : OutputCompositeEffectName | [YMM4Key_EffectCategoryBranchName] | [分岐,branch,合成,composite,blend] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.OutputComposite.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.OutputChannelRouter.OutputChannelRouterEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : ChannelRouterEffectName | [YMM4Key_EffectCategoryBranchName] | [分岐,branch,合成,composite,channel router,channel combiner,set channel,composite channels,channel composite,チャンネルルーター,分岐とチャンネル合成,チャンネル合成,通道路由,通道合成,채널 라우터,채널 합성] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.OutputChannelRouter.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.OutputBranch.OutputBranchEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : OutputBranchEffectName | [YMM4Key_EffectCategoryBranchName] | [分岐,branch,出力,output] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.OutputBranch.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.OpenFx.OpenFxInOutTransitionEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : OpenFxInOutTransitionEffectName | [YMM4Key_EffectCategoryTransitionName] | [OpenFX,OFX,シーンチェンジ,トランジション,ワイプ,scene change,transition,wipe] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.OpenFx.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.OpenFx.OpenFxVideoEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : OpenFxEffectName | [YMM4Key_EffectCategoryFilteringName] | [OpenFX,OFX,プラグイン,plugin] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.OpenFx.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.NtscComposite.NtscCompositeEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : NtscCompositeEffectName | [YMM4Key_EffectCategoryFilteringName] | [ntsc,コンポジット,composite,アナログ,analog,レトロ,retro,vhs,crt,ブラウン管] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.NtscComposite.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.MotionBlur.MotionBlurEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : MotionBlurEffectName | [YMM4Key_EffectCategoryFilteringName] | [motion blur,モーションブラー,残像] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.MotionBlur.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Lut.LutEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : EffectName | [YMM4Key_EffectCategoryFilteringName] | [lut,cube,LUT適用,look up table,ルックアップテーブル,色查找表,色彩查找表,룩업 테이블] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.Lut.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.LuminanceMask.LuminanceMaskEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : LuminanceMask | [YMM4Key_EffectCategoryLayoutName] | [ルミナンスマスク,luminance mask,luminosity mask] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.LuminanceMask.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.LuminanceKey.LuminanceKeyEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : LuminanceKeyEffectName | [YMM4Key_EffectCategoryCompositionName] | [luminance key] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.LuminanceKey.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.LongShadow.LongShadowEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : LongShadowEffectName | [YMM4Key_EffectCategoryDecorationName] | [伸びる影,ロングシャドー,フラットシャドー,long shadow,flat shadow] | False | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.LongShadow.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.LineHighlight.LineHighlightEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : LineHighlight | [YMM4Key_EffectCategoryAnimationName] | [line highlight] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.LineHighlight.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.LensBlur.LensBlurEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : LensBlur | [YMM4Key_EffectCategoryFilteringName] | [lens blur,レンズブラー] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.LensBlur.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Kaleidoscope.KaleidoscopeEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : Kaleidoscope | [YMM4Key_EffectCategoryFilteringName] | [TagKaleidoscope,TagMirror,TagSymmetry] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.Kaleidoscope.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.InOutCrop.InOutCropEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : InOutCropEffectName | [YMM4Key_EffectCategoryTransitionName] | [clipping,crop,クロップ] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.InOutCrop.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.InnerOutline.InnerOutlineEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : InnerOutlineEffectName | [YMM4Key_EffectCategoryDecorationName] | [インナーアウトライン,インナーボーダー,inner outline,inner border,縁取り,ふちどり,アウトライン,outline,ボーダー,border] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.InnerOutline.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.HeatHaze.HeatHazeEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : HeatHazeEffectName | [YMM4Key_EffectCategoryFilteringName] | [TagHeatHaze,TagDistortion,TagHeatShimmer] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.HeatHaze.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.GradientMap.Effect.GradientMapEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : EffectName | [YMM4Key_EffectCategoryFilteringName] | [gradient map,グラデーションマップ,渐变映射,漸層對應,그라디언트 맵] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.GradientMap.Localization.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.GodRay.GodRayEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : GodRayEffectName | [YMM4Key_EffectCategoryDrawingName] | [godray,god ray,light ray,sun ray,光線,ゴッドレイ] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.GodRay.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Fog.FogEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : FogEffectName | [YMM4Key_EffectCategoryFilteringName] | [TagFog,TagMist,TagWeather] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.Fog.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Flip.FlipEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : Flip | [YMM4Key_EffectCategoryDrawingName] | [flip horizontal,flip vertical,左右反転,上下反転,上下左右,ミラー,mirror] | True | True
+      named     : IsEffectItemSupported=True | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.Flip.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.FishEyeLens.FishEyeLensEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : FishEyeLens | [YMM4Key_EffectCategoryFilteringName] | [fish eye lens,レンズ歪み,歪曲収差,レンズディストーション,lens distortion,レンズ補正,lens correction] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.FishEyeLens.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.FillSametype.FillSametypeEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : FillSametypeEffectName | [YMM4Key_EffectCategoryDecorationName] | [fill,同型,塗りつぶし,形状] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.FillSametype.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.FillSameground.FillSamegroundEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : FillSamegroundEffectName | [YMM4Key_EffectCategoryDecorationName] | [fill,同色,塗りつぶし] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.FillSameground.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.FacetedGlass.FacetedGlassEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : FacetedGlass | [YMM4Key_EffectCategoryFilteringName,YMM4Key_EffectCategoryDecorationName] | [TagGlass,TagPrism,TagRefraction,TagFacet] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.FacetedGlass.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.EdgeTrimming.EdgeTrimmingEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : EdgeTrimmingEffectName | [YMM4Key_EffectCategoryFilteringName] | [edge trimming] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.EdgeTrimming.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.EdgeGlow.EdgeGlowEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : EdgeGlowEffectName | [YMM4Key_EffectCategoryDecorationName] | [edge glow,rim light,outline,bloom,エッジ発光,リムライト,輪郭,ブルーム] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.EdgeGlow.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.EdgeDetection.EdgeDetectionEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : EdgeDetectionEffectName | [YMM4Key_EffectCategoryFilteringName] | [エッジ抽出,エッジ検出,edge detection,edge extraction,線画,輪郭] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.EdgeDetection.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Dithering.DitheringEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : Dithering | [YMM4Key_EffectCategoryFilteringName] | [TagDithering,TagRetro,TagPixelArt] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.Dithering.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.DirectionalColorKey.DirectionalColorKeyEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : DirectionalColorKeyEffectName | [YMM4Key_EffectCategoryCompositionName] | [directional color key,dcsk,chroma key,方向クロマキー,色分離キー,変位方向キー] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.DirectionalColorKey.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.CrossHatchShading.CrossHatchShadingEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : CrossHatchShadingEffectName | [YMM4Key_EffectCategoryFilteringName] | [TagCrossHatch,TagHatching,TagPen,TagEngraving,TagBlueprint,TagManga] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.CrossHatchShading.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.CrossFilter.CrossFilterEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : CrossFilterEffectName | [YMM4Key_EffectCategoryDrawingName] | [TagCrossFilter,TagSparkle,TagLightStreak] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.CrossFilter.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Container.ContainerEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : VideoEffect_Name | [YMM4Key_EffectCategoryDecorationName] | [VideoEffect_Tag_Container] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.Container.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ColorShift.ColorShiftEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : ColorShiftEffectName | [YMM4Key_EffectCategoryFilteringName] | [color shift,color draft,color registration error,out of color registration,色ずらし,版ズレ,版ずらし,RGBズレ,RGBずらし] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.ColorShift.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ColorCorrection.ColorCorrectionEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : ColorCorrectionEffectName | [YMM4Key_EffectCategoryFilteringName] | [Color adjustment,明るさ,コントラスト,色相,輝度,彩度,lightness,contrast,hue,brightness,saturation] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.ColorCorrection.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ColorBlindness.ColorBlindnessEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : ColorBlindness | [YMM4Key_EffectCategoryFilteringName] | [色覚異常,色弱,色盲,色覚多様性,色神異常,Color blindness] | True | True
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.ColorBlindness.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.CircularBlur.CircularBlurEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : CircularBlurEffectName | [YMM4Key_EffectCategoryFilteringName] | [circular blur] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.CircularBlur.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Caustics.CausticsEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : CausticsEffectName | [YMM4Key_EffectCategoryFilteringName] | [TagCaustics,TagWater,TagLight] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.Caustics.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.CameraShake.CameraShakeEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : CameraShakeEffect | [YMM4Key_EffectCategoryCameraName] | [揺れ,camera shake] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.CameraShake.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.BlurMap.BlurMapEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : BlurMap | [YMM4Key_EffectCategoryFilteringName] | [ブラーマップ,Blur Map] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.BlurMap.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Bloom.BloomEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : Bloom | [YMM4Key_EffectCategoryFilteringName] | [ブルーム,bloom,グロー,glow] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.Bloom.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.Binarization.BinarizationEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : BinarizationEffectName | [YMM4Key_EffectCategoryFilteringName] | [二値化,2値化,Binarization,threshold,しきい値,いき値,閾値,スレッショルド,スレショルド] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.Binarization.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AudioVolume.Zoom.AudioVolumeZoomEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : AudioVolumeZoomEffect | [YMM4Key_EffectCategoryAnimationName] | [audio volume zoom] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.AudioVolume.Zoom.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AudioVolume.Skew.AudioVolumeSkewEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : AudioVolumeSkewEffect | [YMM4Key_EffectCategoryAnimationName] | [audio volume skew] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.AudioVolume.Skew.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AudioVolume.Rotate.AudioVolumeRotateEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : AudioVolumeRotateEffect | [YMM4Key_EffectCategoryAnimationName] | [角度,audio volume rotate,audio volume rotation,audio volume angle] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.AudioVolume.Rotate.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AudioVolume.Opacity.AudioVolumeOpacityEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : AudioVolumeOpacityEffect | [YMM4Key_EffectCategoryAnimationName] | [不透明度,audio volume opacity] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.AudioVolume.Opacity.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AudioVolume.Move.AudioVolumeMoveEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : AudioVolumeMoveEffect | [YMM4Key_EffectCategoryAnimationName] | [描画位置,座標,audio volume move] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.AudioVolume.Move.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.ArrangeGroupItems.ArrangeGroupItemsEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : ArrangeGroupItemsEffectName | [YMM4Key_EffectCategoryLayoutName] | [整列,Arrange items in group control at equal intervals] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.ArrangeGroupItems.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AnisotropicKuwahara.AnisotropicKuwaharaEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : AnisotropicKuwaharaEffectName | [YMM4Key_EffectCategoryFilteringName] | [TagPainterly,TagKuwahara,TagOilPainting,TagWatercolor] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.AnisotropicKuwahara.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AmbientOcclusion.AmbientOcclusionEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : AmbientOcclusionEffectName | [YMM4Key_EffectCategoryFilteringName] | [TagAmbientOcclusion,TagShading,TagDepth] | True | True
+      named     : IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.AmbientOcclusion.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AlphaMask.AlphaMaskEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : AlphaMask | [YMM4Key_EffectCategoryLayoutName] | [不透明度マスク,アルファマスク,オパシティマスク,alpha mask,opacity mask] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False | ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.AlphaMask.Texts
+  YukkuriMovieMaker.Plugin.Community.Effect.Video.AfterImage.AfterImageEffect (YukkuriMovieMaker.Plugin.Community)
+      ctor      : AfterImage | [YMM4Key_EffectCategoryDecorationName] | [残像,afterimage,モーションブラー,motionblur] | False | True
+      named     : ResourceType=YukkuriMovieMaker.Plugin.Community.Effect.Video.AfterImage.Texts
+  ConjunctionShrink.ConjunctionShrinkEffect (ConjunctionShrink)
+      ctor      : 接続詞を小さく | [テキスト] | [接続詞,縮小,小さく,サイズ,NMeCab,形態素] | True | True
+      named     : IsEffectItemSupported=False | IsAviUtlSupported=False
+  Komaochi.KomaochiEffect (Komaochi)
+      ctor      : コマ落ち | [演出,アニメーション] | [コマ落ち,フレームレート,FPS,ポスタリゼーション時間,ストップモーション,コマ送り] | True | True
+      named     : 
+  Parenting.Effects.ChildEffect (Parenting)
+      ctor      : 子 | [Parenting] | [親子,子,child,parenting] | True | False
+      named     : 
+  Parenting.Effects.ParentEffect (Parenting)
+      ctor      : 親 | [Parenting] | [親子,親,parent,parenting] | True | False
+      named     : 
+  YMM4Echo.EchoEffect (YMM4Echo)
+      ctor      : エコー | [時間] | [echo,エコー,残像,トレイル,AfterEffects,AE] | True | False
+      named     : 

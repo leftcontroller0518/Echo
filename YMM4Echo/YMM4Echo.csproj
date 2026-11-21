@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- YMM4本体が.NET 10ビルドの場合。本体に合わせて変更してください -->
+    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+
+    <!-- YMM4Dir は Directory.Build.props で指定 -->
+
+    <!-- ビルドするとそのままYMM4のプラグインフォルダに出力されます -->
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <OutputPath>$(YMM4Dir)\user\plugin\YMM4Echo\</OutputPath>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="YukkuriMovieMaker.Plugin">
+      <HintPath>$(YMM4Dir)\YukkuriMovieMaker.Plugin.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="YukkuriMovieMaker.Commons">
+      <HintPath>$(YMM4Dir)\YukkuriMovieMaker.Commons.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="YukkuriMovieMaker.Controls">
+      <HintPath>$(YMM4Dir)\YukkuriMovieMaker.Controls.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="Vortice.Direct2D1">
+      <HintPath>$(YMM4Dir)\Vortice.Direct2D1.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Vortice.DirectX">
+      <HintPath>$(YMM4Dir)\Vortice.DirectX.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Vortice.DCommon">
+      <HintPath>$(YMM4Dir)\Vortice.DCommon.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Vortice.DXGI">
+      <HintPath>$(YMM4Dir)\Vortice.DXGI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Vortice.Mathematics">
+      <HintPath>$(YMM4Dir)\Vortice.Mathematics.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="SharpGen.Runtime">
+      <HintPath>$(YMM4Dir)\SharpGen.Runtime.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
